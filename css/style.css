@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.contenido {
+    background-color: #021d34;
+}
+
+.fondo-nav {
+    background-color: #012e46;
+} 
+
+h1,h2,h3,h4,h5,h6 {
+    color: white;
+}
+h1 , h4{
+    font-family: 'Otomanopee One', sans-serif;
+}
+
+.card-carousel {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+ 
+.card-carousel .my-card {
+  height:20rem;
+  width:12rem;
+  position:relative;
+  z-index:1;
+  -webkit-transform: scale(0.6) translateY(-2rem);
+  transform: scale(0.6) translateY(-2rem);
+  opacity:0;
+  cursor:pointer;
+  pointer-events:none;
+  background:#2e5266;
+  background: linear-gradient(totop,#2e5266,#6e8898);
+  transition:1s;
+}
+ 
+.card-carousel .my-card:after {
+  content:'';
+  position:absolute;
+  height:2px;
+  width:100%;
+  border-radius:100%;
+  background-color: rgba(0,0,0,0.3);
+  bottom:-5rem;
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+}
+ 
+.card-carousel .my-card.active {
+  z-index:3;
+  -webkit-transform: scale(1) translateY(0) translateX(0);
+  transform: scale(1) translateY(0) translateX(0);
+  opacity:1;
+  pointer-events:auto;
+  transition:1s;
+}
+ 
+.card-carousel .my-card.prev, .card-carousel .my-card.next {
+  z-index:2;
+  -webkit-transform: scale(0.8) translateY(-1rem) translateX(0);
+  transform: scale(0.8) translateY(-1rem) translateX(0);
+  opacity:0.6;
+  pointer-events:auto;
+  transition:1s;
+}
